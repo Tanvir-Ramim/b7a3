@@ -41,8 +41,17 @@ select
   total_cost
 from Bookings
 join Users on Bookings.user_id= Users.user_id
-
 JOIN Matches 
 ON Bookings.match_id = Matches.match_id;
+
+
+--Answer 5:
+SELECT
+    u.user_id,
+    u.full_name,
+    b.booking_id
+FROM Users u
+LEFT JOIN Bookings b
+ON u.user_id = b.user_id;
 
 
