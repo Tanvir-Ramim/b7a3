@@ -34,5 +34,15 @@ where  payment_status is null
 
   -- Answer 4:
 
+select 
+   booking_id ,
+   full_name,
+  fixture,
+  total_cost
+from Bookings
+join Users on Bookings.user_id= Users.user_id
+
+JOIN Matches 
+ON Bookings.match_id = Matches.match_id;
 
 
