@@ -54,4 +54,13 @@ FROM Users u
 LEFT JOIN Bookings b
 ON u.user_id = b.user_id;
 
+--Answer 6:
+
+select 
+  booking_id, 
+  match_id,
+  total_cost
+from bookings
+where total_cost>(select avg(total_cost) from Bookings)
+
 
