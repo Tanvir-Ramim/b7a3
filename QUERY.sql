@@ -64,3 +64,18 @@ from bookings
 where total_cost>(select avg(total_cost) from Bookings)
 
 
+--Answer 7:
+SELECT
+    match_id,
+    fixture,
+    base_ticket_price
+FROM Matches
+WHERE base_ticket_price <
+(
+    SELECT MAX(base_ticket_price)
+    FROM Matches
+)
+ORDER BY base_ticket_price DESC
+LIMIT 2;
+
+
